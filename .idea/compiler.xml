@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ElasticSearchTest" />
         <module name="esTest" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ElasticSearchTest" target="1.9" />
       <module name="esTest" target="1.5" />
     </bytecodeTargetLevel>
   </component>
