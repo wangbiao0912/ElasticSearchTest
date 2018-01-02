@@ -12,14 +12,21 @@
     <name>ElasticSearchTest</name>
     <url>http://maven.apache.org</url>
 
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.0.BUILD-SNAPSHOT</version>
+    </parent>
+
     <repositories>
-        <repository>
+       <!-- <repository>
             <id>elastic-lucene-snapshots</id>
             <name>Elastic Lucene Snapshots</name>
             <url>http://s3.amazonaws.com/download.elasticsearch.org/lucenesnapshots/00142c9</url>
             <releases><enabled>true</enabled></releases>
             <snapshots><enabled>false</enabled></snapshots>
-        </repository>
+        </repository>-->
         <!-- add the elasticsearch repo -->
         <!--  x-pack -->
         <repository>
@@ -34,26 +41,21 @@
         </repository>
         <!--  spring boot -->
         <repository>
-            <id>spring-milestones</id>
-            <name>Spring Milestones</name>
-            <url>https://repo.spring.io/libs-milestone</url>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/libs-snapshot</url>
             <snapshots>
-                <enabled>false</enabled>
+                <enabled>true</enabled>
             </snapshots>
         </repository>
     </repositories>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.0.M7</version>
-    </parent>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.9</java.version>
-        <elasticsearch.version>6.0.1</elasticsearch.version>
-        <springboot.version>2.0.0.M7</springboot.version>
+        <elasticsearch.version>6.1.1</elasticsearch.version>
+        <springboot.version>2.0.0.BUILD-SNAPSHOT</springboot.version>
     </properties>
 
     <dependencies>
@@ -152,7 +154,7 @@
         <dependency>
             <groupId>org.elasticsearch</groupId>
             <artifactId>elasticsearch</artifactId>
-            <version>5.4.0</version>
+            <version>${elasticsearch.version}</version>
         </dependency>
     </dependencies>
 
