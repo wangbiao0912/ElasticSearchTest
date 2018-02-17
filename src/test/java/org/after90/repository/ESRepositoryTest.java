@@ -89,7 +89,7 @@ public class ESRepositoryTest {
         String strType = "type_wangbiao";
         es.buildClient();
         es.delete(strIndex);
-        es.create(strIndex, 1, 0);
+        es.create(strIndex, 5, 0);
         PropertiesClass properties = new PropertiesClass(new WebAssetClass());
         String strMapping = JSON.toJSONString(properties);
         log.info("strMapping:{}", strMapping);
@@ -104,7 +104,7 @@ public class ESRepositoryTest {
         es.buildClient();
         es.bulidBulkProcessor();
         es.delete(strIndex);
-        es.create(strIndex, 1, 0);
+        es.create(strIndex, 5, 0);
         PropertiesClass properties = new PropertiesClass(new WebAssetClass());
         String strMapping = JSON.toJSONString(properties);
         es.putMapping(strIndex, strType, strMapping);
@@ -113,7 +113,7 @@ public class ESRepositoryTest {
             object.put("url", "www.nsfocus.com" + i);
             object.put("ip", "10.24.0." + i);
             object.put("banner", "this is a banner, No." + i);
-          //  object.put("banner1", "this is a banner, No." + i);
+      //      object.put("banner1", "this is a banner, No." + i);
             es.bulkProcessor.add(new IndexRequest(strIndex,
                     strType,
                     "id_" + i).source( object.toJSONString()));

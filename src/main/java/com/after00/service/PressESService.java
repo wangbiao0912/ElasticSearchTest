@@ -33,7 +33,7 @@ public class PressESService {
                 json.put("strID", "1302222012020600" + i);
                 json.put("adstrID", "1302222012020600" + i);
                 json.put("dtCreate", new Date());
-                es.bulkProcessor.add(new IndexRequest("zhaogj_test01",
+                es.bulkProcessor.add(new IndexRequest("wangbiao_test01",
                         "type_test",
                         "id_" + j + "_" + i).source(json));
                 if (i % 1000000 == 0) {
@@ -44,7 +44,7 @@ public class PressESService {
         }
         //这里是个坑！如果你不等会，直接退出会丢数据，或者flush一下
         try {
-            //Thread.sleep(1000 * 10);
+            Thread.sleep(1000 * 10);
         } catch (Exception e) {
             log.error("", e);
         }

@@ -8,6 +8,7 @@ import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.rest.RestStatus;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -24,8 +25,9 @@ public class ESDocumentService {
     @Autowired
     private ESRepository es;
 
+    @Value("${es.index.strGuestIndex}")
     private String strGuestIndex;
-
+    @Value("${es.index.strGuestType}")
     private String strGuestType;
 
     public void index() {
